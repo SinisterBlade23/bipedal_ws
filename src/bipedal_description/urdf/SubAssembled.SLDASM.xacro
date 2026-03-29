@@ -1,0 +1,391 @@
+<?xml version="1.0"?>
+<robot
+  name="bipedal_description" xmlns:xacro = "https://www.ros.org/wiki/xacro">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="3.05311331771918E-16 6.66133814775094E-16 -0.0440368376270057"
+        rpy="0 0 0" />
+      <mass
+        value="0.550578009276032" />
+      <inertia
+        ixx="0.00225703254075933"
+        ixy="1.11805945563652E-12"
+        ixz="1.02105322208042E-19"
+        iyy="0.00137104483658563"
+        iyz="3.52375371520983E-19"
+        izz="0.00271105811285358" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bipedal_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bipedal_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="right_thigh">
+    <inertial>
+      <origin
+        xyz="1.44589687722796E-08 -0.0777175782349957 0.00780976806817946"
+        rpy="0 0 0" />
+      <mass
+        value="0.0929068550232159" />
+      <inertia
+        ixx="0.000342913281278675"
+        ixy="1.04399813421277E-10"
+        ixz="-6.30056356828866E-12"
+        iyy="1.35719649442593E-05"
+        iyz="4.09780078448163E-13"
+        izz="0.000351405486173096" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bipedal_description/meshes/right_thigh.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bipedal_description/meshes/right_thigh.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_base_thigh"
+    type="revolute">
+    <origin
+      xyz="0 -0.1009 -0.026"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_thigh" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="30"
+      velocity="20" />
+  </joint>
+  <link
+    name="right_calf">
+    <inertial>
+      <origin
+        xyz="-2.35409344795379E-10 -0.0897671251942293 -0.0144860741170414"
+        rpy="0 0 0" />
+      <mass
+        value="0.143541854586354" />
+      <inertia
+        ixx="0.000223214998517886"
+        ixy="-3.33581116515898E-13"
+        ixz="-5.5902971664288E-13"
+        iyy="2.33121171310356E-05"
+        iyz="-1.56271221963117E-06"
+        izz="0.000225311505505499" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bipedal_description/meshes/right_calf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bipedal_description/meshes/right_calf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_thigh_calf"
+    type="revolute">
+    <origin
+      xyz="0 -0.15544 0"
+      rpy="0 0 1.5708" />
+    <parent
+      link="right_thigh" />
+    <child
+      link="right_calf" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="30"
+      velocity="20" />
+  </joint>
+  <link
+    name="right_wheel">
+    <inertial>
+      <origin
+        xyz="8.44574813471492E-05 -6.46378206703158E-05 0.013877615860227"
+        rpy="0 0 0" />
+      <mass
+        value="0.0746273902424652" />
+      <inertia
+        ixx="5.20407688715641E-05"
+        ixy="-1.59160058079771E-09"
+        ixz="1.72765460255098E-09"
+        iyy="5.20396433942443E-05"
+        iyz="-1.33122287628244E-09"
+        izz="9.526913455805E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bipedal_description/meshes/right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bipedal_description/meshes/right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_calf_wheel"
+    type="continuous">
+    <origin
+      xyz="0 -0.171 0"
+      rpy="0 0 -1.5708" />
+    <parent
+      link="right_calf" />
+    <child
+      link="right_wheel" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="1"
+      velocity="40" />
+
+  </joint>
+  <link
+    name="left_thigh">
+    <inertial>
+      <origin
+        xyz="1.44589686890129E-08 -0.0777175782349955 -0.0121902319318204"
+        rpy="0 0 0" />
+      <mass
+        value="0.0929068550232159" />
+      <inertia
+        ixx="0.000342913281278675"
+        ixy="1.04399813424612E-10"
+        ixz="-6.30056349573642E-12"
+        iyy="1.35719649442593E-05"
+        iyz="4.09780136375723E-13"
+        izz="0.000351405486173096" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bipedal_description/meshes/left_thigh.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bipedal_description/meshes/left_thigh.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_base_thigh"
+    type="revolute">
+    <origin
+      xyz="0 0.1209 -0.026"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_thigh" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="30"
+      velocity="20" />
+  </joint>
+  <link
+    name="left_calf">
+    <inertial>
+      <origin
+        xyz="-2.35459735042909E-10 -0.0897671251942163 -0.0230860741170443"
+        rpy="0 0 0" />
+      <mass
+        value="0.143541854586354" />
+      <inertia
+        ixx="0.000223214998517885"
+        ixy="-3.3358091573014E-13"
+        ixz="-5.59029702046347E-13"
+        iyy="2.33121171310354E-05"
+        iyz="-1.56271221963114E-06"
+        izz="0.000225311505505499" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bipedal_description/meshes/left_calf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bipedal_description/meshes/left_calf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_thigh_calf"
+    type="revolute">
+    <origin
+      xyz="0 -0.15544 -0.0114"
+      rpy="0 0 -1.5708" />
+    <parent
+      link="left_thigh" />
+    <child
+      link="left_calf" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="30"
+      velocity="20" />
+  </joint>
+  <link
+    name="left_wheel">
+    <inertial>
+      <origin
+        xyz="8.44574813316928E-05 -6.46378206606568E-05 0.00527761586022657"
+        rpy="0 0 0" />
+      <mass
+        value="0.0746273902424651" />
+      <inertia
+        ixx="5.2040768871564E-05"
+        ixy="-1.59160058077952E-09"
+        ixz="1.72765460258245E-09"
+        iyy="5.20396433942441E-05"
+        iyz="-1.33122287629024E-09"
+        izz="9.52691345580497E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bipedal_description/meshes/left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bipedal_description/meshes/left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_calf_wheel"
+    type="continuous">
+    <origin
+      xyz="0 -0.171 0"
+      rpy="0 0 1.5708" />
+    <parent
+      link="left_calf" />
+    <child
+      link="left_wheel" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="1"
+      velocity="40" />
+  </joint>
+</robot>
