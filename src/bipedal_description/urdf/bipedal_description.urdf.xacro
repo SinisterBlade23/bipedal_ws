@@ -2,6 +2,7 @@
 <robot name="bipedal_description" xmlns:xacro = "https://www.ros.org/wiki/xacro">
 
     <xacro:include filename="SubAssembled.SLDASM.xacro" />
+    <xacro:include filename="ros2_control.urdf"/>
 
 
 </robot>
