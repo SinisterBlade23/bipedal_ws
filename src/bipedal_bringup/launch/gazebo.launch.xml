@@ -23,13 +23,13 @@
 
 
     <include file = "$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py">
-        <arg name = "gz_args" value = "empty.sdf -r"/>
+        <arg name = "gz_args" value = "$(find-pkg-share bipedal_bringup)/worlds/bipedal.sdf -r"/>
     </include>
 
     <!-- spawning in empty world -->
 
 
-    <node pkg = "ros_gz_sim" exec="create" args ="-topic robot_description -z 0.5"/>
+    <node pkg = "ros_gz_sim" exec="create" args ="-topic robot_description -z 0.28"/>
 
     <!-- robot spawns -->
 
@@ -39,13 +39,13 @@
     </node>
 
     <node pkg="controller_manager" exec="spawner" output="screen"
-          args="joint_state_broadcaster --controller-manager /controller_manager --controller-manager-timeout 7">
+          args="joint_state_broadcaster --controller-manager /controller_manager --controller-manager-timeout 30">
         <param name="use_sim_time" value="true"/>
     </node>
 
     <!-- Joint Position Controller -->
     <node pkg="controller_manager" exec="spawner" output="screen"
-          args="joint_position_controller --controller-manager /controller_manager --controller-manager-timeout 7">
+          args="joint_position_controller --controller-manager /controller_manager --controller-manager-timeout 30">
         <param name="use_sim_time" value="true"/>
     </node>
 

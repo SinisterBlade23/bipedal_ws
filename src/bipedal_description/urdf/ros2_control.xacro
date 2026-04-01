@@ -12,7 +12,9 @@
       <param name="min">-1.57</param>
       <param name="max">1.57</param>
     </command_interface>
-    <state_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.831308</param>
+    </state_interface>
   </joint>
 
   <joint name="left_thigh_calf">
@@ -20,7 +22,9 @@
       <param name="min">-1.57</param>
       <param name="max">1.57</param>
     </command_interface>
-    <state_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">-0.171181</param>
+    </state_interface>
   </joint>
 
   <joint name="right_base_thigh">
@@ -28,7 +32,9 @@
       <param name="min">-1.57</param>
       <param name="max">1.57</param>
     </command_interface>
-    <state_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">-0.831308</param>
+    </state_interface>
   </joint>
 
   <joint name="right_thigh_calf">
@@ -36,7 +42,9 @@
       <param name="min">-1.57</param>
       <param name="max">1.57</param>
     </command_interface>
-    <state_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.172774</param>
+    </state_interface>
   </joint>
 
   <joint name="left_calf_wheel">
