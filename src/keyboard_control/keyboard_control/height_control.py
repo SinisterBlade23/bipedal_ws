@@ -12,7 +12,6 @@ class height_control(Node):
         super().__init__("height_control")
         self.publisher_ = self.create_publisher(String, 'input_key', 10)
         self.get_logger().info(" Press W to increase height and S to decrease height")
-        self.get_logger().info(" Pratham Ranka")
 
         self.settings = termios.tcgetattr(sys.stdin)
         self.run()
