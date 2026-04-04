@@ -10,7 +10,7 @@ using namespace std::placeholders;
 class ik_height_control: public rclcpp::Node
 {
     public:
-        ik_height_control() : Node("ik_height_control"), Y(250.0), Y_step(10.0), X(0.0)
+        ik_height_control() : Node("ik_height_control"), Y(250.0), Y_step(10.0), X(-50)
         {
             
 
