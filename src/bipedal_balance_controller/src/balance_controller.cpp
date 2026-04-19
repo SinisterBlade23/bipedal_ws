@@ -8,7 +8,7 @@ using namespace std::placeholders;
 class balance_controller : public rclcpp::Node
 {
 public:
-    balance_controller() : Node("balance_controller"), kp(30), ki(0.01), kd(0.5)
+    balance_controller() : Node("balance_controller"), kp(18), ki(0.01), kd(0.225)
     {
         prev_time_  = this->get_clock()->now();
         start_time_ = this->get_clock()->now();
@@ -25,7 +25,7 @@ private:
     double kp, ki, kd;
     const double setpoint  = 0.0;
     const double max_speed = 30.0;
-    const double deadband  = 0.001;
+    const double deadband  = 0.00001;
     const double startup_wait = 3.0;
 
     double pitch_    = 0.0;

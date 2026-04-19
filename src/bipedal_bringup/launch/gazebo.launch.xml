@@ -23,7 +23,7 @@
     </include>
 
     <!-- Spawn robot -->
-    <node pkg="ros_gz_sim" exec="create" args="-topic robot_description -z 0.28 -P 0.1"/>
+    <node pkg="ros_gz_sim" exec="create" args="-topic robot_description -z 0.39 "/>
 
     <!-- ROS-Gazebo Bridge -->
     <node pkg="ros_gz_bridge" exec="parameter_bridge" output="screen">
